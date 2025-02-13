@@ -18,7 +18,7 @@ interface FFmpegInitOptions {
 }
 
 const defaultInitOptions: Required<FFmpegInitOptions> = {
-  core: "@ffmpeg.wasm/core-mt",
+  core: "@ntsilkwasm/core-mt",
   coreOptions: {},
   defaultArgs: ["-nostdin", "-y", "-hide_banner"],
   log: false,

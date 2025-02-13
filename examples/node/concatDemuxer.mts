@@ -4,7 +4,7 @@ import { join } from "path";
 import { assetsDir, outDir } from "./utils.mjs";
 
 const ffmpeg = await FFmpeg.create({
-  core: "@ffmpeg.wasm/core-mt",
+  core: "@ntsilkwasm/core-mt",
   log: true,
 });
 

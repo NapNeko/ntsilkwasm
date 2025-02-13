@@ -42,7 +42,7 @@ type FFmpegLogger = (
 **Arguments:**
 
 - `_options`: an object of customized options :
-  - `core`: path to `core.js` of FFmpeg.wasm core (default: `@ffmpeg.wasm/core-mt`)
+  - `core`: path to `core.js` of FFmpeg.wasm core (default: `@ntsilkwasm/core-mt`)
   - `coreOptions`: Normally, Emscripten looks for other files in the folder where core.js is located. You can change the default behaviour with the following options:
     - `locateFile()` `locateFile` function of [Emscripten module object](https://emscripten.org/docs/api_reference/module.html#Module.locateFile)(**NOTE**: this setting overrides `wasmPath` and `workerPath`)
     - `wasmPath`: path to `core.wasm` of FFmpeg.wasm core
@@ -55,7 +55,7 @@ type FFmpegLogger = (
 
 ```ts
 const ffmpeg = FFmpeg.create({
-  core: "@ffmpeg.wasm/core-mt",
+  core: "@ntsilkwasm/core-mt",
   log: true,
 });
 ```
@@ -91,9 +91,9 @@ interface FFmpegFlags {
 **Examples:**
 
 ```ts
-import { FFmpeg } from "@ffmpeg.wasm/main";
-const ffmpeg1 = await FFmpeg.create({ core: "@ffmpeg.wasm/core-mt" });
-const ffmpeg2 = await FFmpeg.create({ core: "@ffmpeg.wasm/core-st" });
+import { FFmpeg } from "@ntsilkwasm/main";
+const ffmpeg1 = await FFmpeg.create({ core: "@ntsilkwasm/core-mt" });
+const ffmpeg2 = await FFmpeg.create({ core: "@ntsilkwasm/core-st" });
 
 console.log(ffmpeg1.flags); // { simd: false, thread: true, wasi: false }
 console.log(ffmpeg2.flags); // { simd: false, thread: false, wasi: false }

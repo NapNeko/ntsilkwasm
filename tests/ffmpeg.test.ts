@@ -4,11 +4,11 @@ import { FFmpeg } from "../packages/main/src";
 
 describe("create", () => {
   test("construct with core path string", () =>
-    FFmpeg.create({ core: "@ffmpeg.wasm/core-mt" }));
+    FFmpeg.create({ core: "@ntsilkwasm/core-mt" }));
 
   test("construct with core factory function", async () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const core = (await import("@ffmpeg.wasm/core-mt")).default;
+    const core = (await import("@ntsilkwasm/core-mt")).default;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     await FFmpeg.create({ core });
   });
@@ -29,7 +29,7 @@ describe("create", () => {
 describe("basic", () => {
   test("version", async () => {
     const ffmpeg = await FFmpeg.create({
-      core: "@ffmpeg.wasm/core-mt",
+      core: "@ntsilkwasm/core-mt",
     });
     expect(ffmpeg.version).toBeTypeOf("object");
     expect(ffmpeg.version.main).toBe(version);
@@ -38,7 +38,7 @@ describe("basic", () => {
 
   test("exit", async () => {
     const ffmpeg = await FFmpeg.create({
-      core: "@ffmpeg.wasm/core-mt",
+      core: "@ntsilkwasm/core-mt",
     });
     expect(ffmpeg.exited).toBe(false);
     ffmpeg.exit();
@@ -47,7 +47,7 @@ describe("basic", () => {
 
   test("log", async () => {
     const ffmpeg = await FFmpeg.create({
-      core: "@ffmpeg.wasm/core-mt",
+      core: "@ntsilkwasm/core-mt",
       log: false,
     });
     const logger = vi.fn().mockName("logger");
@@ -62,14 +62,14 @@ describe("basic", () => {
 
 describe("flags", () => {
   test("flags of core-mt", async () => {
-    const { flags } = await FFmpeg.create({ core: "@ffmpeg.wasm/core-mt" });
+    const { flags } = await FFmpeg.create({ core: "@ntsilkwasm/core-mt" });
 
     expect(flags.simd).toBe(false);
     expect(flags.thread).toBe(true);
     expect(flags.wasi).toBe(false);
   });
   test("flags of core-st", async () => {
-    const { flags } = await FFmpeg.create({ core: "@ffmpeg.wasm/core-st" });
+    const { flags } = await FFmpeg.create({ core: "@ntsilkwasm/core-st" });
 
     expect(flags.simd).toBe(false);
     expect(flags.thread).toBe(false);
