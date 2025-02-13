@@ -1,5 +1,5 @@
 {
-  "name": "@ffmpeg.wasm/core-mt",
+  "name": "@ntsilkwasm/core-mt",
   "version": "0.13.2",
   "description": "ffmpeg.wasm core (mult thread)",
   "keywords": [

@@ -1,5 +1,5 @@
 {
-  "name": "@ffmpeg.wasm/main",
+  "name": "@ntsilkwasm/main",
   "version": "0.13.1",
   "description": "WebAssembly version of FFmpeg",
   "keywords": [

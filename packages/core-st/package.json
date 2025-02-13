@@ -1,5 +1,5 @@
 {
-  "name": "@ffmpeg.wasm/core-st",
+  "name": "@ntsilkwasm/core-st",
   "version": "0.13.2",
   "description": "ffmpeg.wasm core (single thread)",
   "keywords": [
